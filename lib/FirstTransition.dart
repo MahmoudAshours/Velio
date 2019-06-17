@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'ShowUp.dart';
+import 'helpingwidget.dart';
 
 class FirstTransition extends StatefulWidget {
   @override
@@ -14,6 +15,8 @@ class _FirstTransition extends State<FirstTransition> {
   int delay = 1000;
   double height = 200;
   double width = 300;
+  bool helperapp = false;
+  bool welomevis = true;
   Text keepclick = Text('Keep holding the welcome');
   Widget presshereIcon() {
     return Center(
@@ -40,54 +43,69 @@ class _FirstTransition extends State<FirstTransition> {
   }
 
   Widget welcome() {
-    return Center(
-        child: ShowUp(
-            delay: delay,
-            child: ColorizeAnimatedTextKit(
-              colors: [
-                Colors.lightBlue,
-                Colors.deepOrange,
-                Colors.lightBlueAccent,
-                Colors.green,
-                Colors.white,
-                Colors.red,
-                Colors.tealAccent
-              ],
-              duration: Duration(seconds: 2),
-              text: ['Welcome .. '],
-              textStyle: TextStyle(fontSize: 40.0, fontFamily: "Canterbury"),
-              textAlign: TextAlign.start,
-              alignment: AlignmentDirectional.topStart,
-              isRepeatingAnimation: true,
-            )));
+    return Visibility(
+        visible: welomevis,
+        child: Center(
+            child: ShowUp(
+                delay: delay,
+                child: ColorizeAnimatedTextKit(
+                  colors: [
+                    Colors.lightBlue,
+                    Colors.deepOrange,
+                    Colors.lightBlueAccent,
+                    Colors.green,
+                    Colors.white,
+                    Colors.red,
+                    Colors.tealAccent
+                  ],
+                  duration: Duration(seconds: 2),
+                  text: ['Welcome .. '],
+                  textStyle:
+                      TextStyle(fontSize: 40.0, fontFamily: "Canterbury"),
+                  textAlign: TextAlign.start,
+                  alignment: AlignmentDirectional.topStart,
+                  isRepeatingAnimation: true,
+                ))));
+  }
+
+  Widget helperappearance() {
+    return ShowUp(
+        delay: 1000,
+        child: Visibility(
+          child: helpingwidget(),
+          visible: helperapp,
+        ));
   }
 
   Widget welcomeContainer() {
-    return Center(
-        child: AnimatedContainer(
-      duration: Duration(seconds: 2),
-      curve: Curves.bounceInOut,
-      height: height,
-      width: width,
-      alignment: Alignment.center,
-      color: currcol,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          welcome(),
-          ShowUp(
-            child: Icon(
-              Icons.arrow_upward,
-              size: 30,
-
-            ),
-            delay: delay + 1500,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        AnimatedContainer(
+          duration: Duration(seconds: 2),
+          curve: Curves.easeOutExpo,
+          height: height,
+          width: width,
+          alignment: Alignment.center,
+          color: currcol,
+          child: Column(
+            children: <Widget>[
+              welcome(),
+              ShowUp(
+                child: Icon(
+                  Icons.arrow_upward,
+                  size: 30,
+                ),
+                delay: delay + 1500,
+              ),
+              presshere(),
+              helperappearance()
+            ],
           ),
-          presshere()
-        ],
-      ),
-    ));
+        )
+      ],
+    );
   }
 
   @override
@@ -100,6 +118,8 @@ class _FirstTransition extends State<FirstTransition> {
             width = MediaQuery.of(context).size.width;
             currcol = Colors.black;
             keepclick = Text('');
+            helperapp = true;
+            welomevis = false;
           });
         },
         child: welcomeContainer(),
