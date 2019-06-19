@@ -111,7 +111,9 @@ class _FirstTransition extends State<FirstTransition> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GestureDetector(
+      body: ListView(
+        children: <Widget>[
+          GestureDetector(
         onLongPress: () {
           setState(() {
             height = MediaQuery.of(context).size.height;
@@ -124,6 +126,7 @@ class _FirstTransition extends State<FirstTransition> {
         },
         child: welcomeContainer(),
       ),
-    );
+      ],
+    ));
   }
 }
