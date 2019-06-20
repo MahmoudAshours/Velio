@@ -127,7 +127,7 @@ class _helpingwidget extends State<helpingwidget> {
     return Visibility(
         visible: secondhelpvis,
         child: ShowUp(
-            delay: 1000,
+            delay: 1500,
             child: Column(
               children: <Widget>[
                 Icon(Icons.linear_scale, size: 20, color: red),
