@@ -1,16 +1,32 @@
-# velio
+# Velio
 
-A new Flutter project.
+An Android/IOS application project to follow up your progress of online courses.
 
-## Getting Started
+This is a Solo project test , where the analysis , design , implementation & testing is done by individual.
 
-This project is a starting point for a Flutter application.
+# Main features 
 
-A few resources to get you started if this is your first Flutter project:
+- The user can add up an online course , for example **"Udemy course for Learning flutter"** . 
+- The user can link (sign in) to the course's account .
+- The system then automatically calculates : 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [ ] How many videos are there in the course?
+- [ ] Each video's time length.
+- [ ] The title of each video.
+- [ ] Attached files in the videos.
+- [ ] Attached notes in each videos.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+- The user suggests number of days to finish the selected course ( i.e 14 days) .
+- The system then calculates the minimum amount & maximum amount of videos to finish within one day.
+- [ ] Minimum amount is when the total count of videos is (14) and the goal is to take it in (14) days. So the result is 1 video/day.
+- [ ] Maximum amount is when the total count of videos is (14) and the goal is to take it in (14) days , but the length of videos is small compared with other videos, So the number of videos daily can increase with certain amount. (i.e. 4 videos/day)
+
+- The project database is done locally using "Hive DB".
+
+# Analysis (OODB)
+
+# UI/UX Design
+
+# Testing 
+
+
