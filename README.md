@@ -23,10 +23,24 @@ This is a Solo project test , where the analysis , design , implementation & tes
 
 - The project database is done locally using "Hive DB".
 
-# Analysis (OODB)
+# Outline Tasks
+
+- [ ] Complete analyisis for the Velio project.
+- [ ] Business analysis for the Velio project.
+- [ ] Completing UI/UX using Figma. 
+- [ ] Finishing test cases.
+- [ ] Using OODB in project structure analysis.
+- [ ] Starting implementing.
+
+# Analysis
+
+This section contains the complete analysis & Business analysis files of the project.
 
 # UI/UX Design
 
+This section contains the complete UI/UX files of the project.
+
 # Testing 
 
+This section contains the complete test cases files of each module in the project.
 
